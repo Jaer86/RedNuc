@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedNuc", "RedNuc\RedNuc.csproj", "{ACCC0928-1A5F-406B-A785-9E9904EF6937}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedNuc.Data", "RedNuc.Data\RedNuc.Data.csproj", "{9FFBB5C2-32EF-4B15-829B-87C7B739FE43}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{ACCC0928-1A5F-406B-A785-9E9904EF6937}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACCC0928-1A5F-406B-A785-9E9904EF6937}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACCC0928-1A5F-406B-A785-9E9904EF6937}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FFBB5C2-32EF-4B15-829B-87C7B739FE43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FFBB5C2-32EF-4B15-829B-87C7B739FE43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FFBB5C2-32EF-4B15-829B-87C7B739FE43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FFBB5C2-32EF-4B15-829B-87C7B739FE43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
