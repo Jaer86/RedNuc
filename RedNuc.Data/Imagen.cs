@@ -6,12 +6,19 @@ using System.Threading.Tasks;
 
 namespace RedNuc.Data
 {
-    public class Arte
+    public class Imagen
     {
         public int Id { get; set; }
+        public byte[] Datos { get; set; }
+
+        public virtual FichaTecnica FichaTecnica { get; set; }
 
         public int GaleriaId { get; set; }
-        public Galeria Galeria { get; set; }
+        public virtual Galeria Galeria { get; set; }
+
+
+
+       
 
     }
 }

@@ -8,14 +8,17 @@ namespace RedNuc.Data
 {
     public class Galeria
     {
-        
-        public virtual ICollection<Arte> Artes { get; set; }
+        public int Id { get; set; }
+        public string Nombre { get; set; }
 
-       
+        public virtual ICollection<Imagen> Imagenes { get; set; }
+
+        public int ProyectoId { get; set; }
+        public virtual Proyecto Proyecto { get; set; }
 
         public Galeria()
         {
-            Artes = new List<Arte>();
+            Imagenes = new List<Imagen>();
         }
     }
 }
