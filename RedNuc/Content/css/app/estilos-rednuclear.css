@@ -1,0 +1,80 @@
+
+
+/*
+
+Estilos Red Nuclear de Creación
+
+*/
+
+body {
+    cursor: default;
+}
+
+* {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+p {
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -o-user-select: text;
+    user-select: text;
+}
+
+
+
+
+.rednuclear-index-content {
+    background-image: url('../../img/bg/rednuclear-bg-index.jpg');
+    background-color: black;
+    background-size: cover;
+}
+
+
+
+
+
+
+.rednuclear-login-content {
+    background-image: url('../../img/bg/rednuclear-bg-login.jpg');
+    background-color: black;
+    background-size: cover;
+}
+
+.red-nuclear-form-control-login {
+    background-color: transparent !important;
+}
+
+    .red-nuclear-form-control-login:focus {
+        border-color: #e91e63 !important;
+        outline: 0;
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(180, 180, 180, 0.6);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(180, 180, 180, 0.6);
+    }
+
+
+.red-nuclear-login-bgm-black {
+    background-color: rgba(0,0,0,0.7) !important;
+}
+
+.fg-line-red-nuclear:not([class*=has-]):after {
+    background: #e91e63 !important;
+}
+
+/* Sobre-escritura de reglas del tema material */
+
+/* Reglas modificada para que los estilos de validación luzcan bien */
+.has-error .input-group-addon {
+    border: none;
+    background: none;
+}
+
+.has-success .input-group-addon {
+    border: none;
+    background: none;
+}

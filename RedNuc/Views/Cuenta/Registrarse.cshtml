@@ -1,0 +1,172 @@
+﻿@{
+    Layout = null;
+}
+@model RedNuc.Models.ViewModels.RegistrarseViewModel
+<!DOCTYPE html>
+<html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Red Nuclear de Creación</title>
+
+    <!-- Vendor CSS -->
+    <link href="~/Content/css/ext/animate/animate.min.css" rel="stylesheet" />
+    <link href="~/Content/css/ext/material-design-iconic-font/material-design-iconic-font.min.css" rel="stylesheet" />
+    <link href="~/Content/css/ext/FormValidation/formValidation.min.css" rel="stylesheet" />
+
+    <!-- CSS -->
+    <link href="~/Content/css/ext/app-theme/app.min.1.css" rel="stylesheet" />
+    <link href="~/Content/css/ext/app-theme/app.min.2.css" rel="stylesheet" />
+
+    <!-- Estilos Red Nuclear -->
+    <link href="~/Content/css/app/estilos-rednuclear.css" rel="stylesheet" />
+</head>
+
+<body class="rednuclear-login-content">
+    <div class="container">
+        <br>
+        <div class="row">
+
+            <div class="col-xs-offset-3 col-xs-2 hidden-xs">
+                <img src="~/Content/img/red-nuclear-logo-v-500px.png" class="img-responsive" alt="Red Nuclear de Creación">
+            </div>
+
+            <div class="visible-xs">
+                <img src="~/Content/img/red-nuclear-logo-v-500px.png" class="img-responsive center-block" width="200" alt="Red Nuclear de Creación">
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-xs-12">
+                @using (Html.BeginForm("Registrarse", "Cuenta", FormMethod.Post, new { id = "forma-registrarse" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <!-- Inicia Registro -->
+                    <div class="panel bgm-black red-nuclear-login-bgm-black">
+                        <div class="panel-body text-center c-white">
+                            <br>
+                            <h1 class="c-white"><i class="zmdi zmdi-pin-account"></i></h1><br>
+                            <h4 class="c-white">Bienvenido a la Red Nuclear de Creación</h4>
+                            <p>
+                                Por favor ingresa los siguientes datos<br>
+                                para crear tu cuenta
+                            </p>
+                            <br>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+                                    <div class="col-sm-6">
+                                        <div class="fg-line fg-line-red-nuclear">
+                                            @Html.TextBoxFor(x => x.Nombre, new { @class = "form-control red-nuclear-form-control-login c-white", placeholder = "Nombre" })
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="fg-line fg-line-red-nuclear">
+                                            @Html.TextBoxFor(x => x.Apellidos, new { @class = "form-control red-nuclear-form-control-login c-white", placeholder = "Apellido" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="zmdi zmdi-email"></i></span>
+                                    <div class="fg-line fg-line-red-nuclear">
+                                        @Html.TextBoxFor(x => x.CorreoElectronico, new { @class = "form-control red-nuclear-form-control-login c-white", placeholder = "Dirección de correo electrónico" })
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="zmdi zmdi-lock"></i></span>
+                                    <div class="fg-line fg-line-red-nuclear">
+                                        @Html.PasswordFor(x => x.Contrasena, new { @class = "form-control red-nuclear-form-control-login c-white", placeholder = "Contraseña" })
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="clearfix"></div>
+                            <div class="form-group">
+                                <div class="checkbox">
+                                    <label>
+                                        <input name="EsAceptado" type="checkbox" value="">
+                                        <i class="input-helper"></i>
+                                        Acepto los términos y condiciones
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <br>
+                            <button type="submit" class="btn bgm-pink waves-effect">Registrarme</button>
+                        </div>
+                        <br><br>
+                    </div>
+                }
+
+            </div>
+        </div>
+
+
+        <!-- Older IE warning message -->
+        <!--[if lt IE 9]>
+            <div class="ie-warning">
+                <h1 class="c-white">Warning!!</h1>
+                <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+                <div class="iew-container">
+                    <ul class="iew-download">
+                        <li>
+                            <a href="http://www.google.com/chrome/">
+                                <img src="img/browsers/chrome.png" alt="">
+                                <div>Chrome</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.mozilla.org/en-US/firefox/new/">
+                                <img src="img/browsers/firefox.png" alt="">
+                                <div>Firefox</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.opera.com">
+                                <img src="img/browsers/opera.png" alt="">
+                                <div>Opera</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.apple.com/safari/">
+                                <img src="img/browsers/safari.png" alt="">
+                                <div>Safari</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                                <img src="img/browsers/ie.png" alt="">
+                                <div>IE (New)</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p>Sorry for the inconvenience!</p>
+            </div>
+        <![endif]-->
+        <!-- Javascript Libraries -->
+        <script src="~/Content/js/ext/jQuery/jquery.min.js"></script>
+        <script src="~/Content/js/ext/waves/waves.min.js"></script>
+        <script src="~/Content/js/ext/bootstrap/bootstrap.min.js"></script>
+        <script src="~/Content/js/ext/formValidation/formValidation.min.js"></script>
+        <script src="~/Content/js/ext/formValidation/frameworks/bootstrap.min.js"></script>
+        <script src="~/Content/js/app/cuenta_controller/cuenta.registrarse.js"></script>
+        <script src="~/Content/js/app/app.js"></script>
+        <!-- <script src="vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js"></script> -->
+        <!-- Placeholder for IE9 -->
+        <!--[if IE 9 ]>
+            <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+        <![endif]-->
+
+    </div>
+</body>
+</html>
+<!-- Localized -->
