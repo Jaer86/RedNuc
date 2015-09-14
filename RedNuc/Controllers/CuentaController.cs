@@ -39,7 +39,7 @@ namespace RedNuc.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return View(modelo);
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.InternalServerError, "MODELO_INVALIDO");
 
             }
 
@@ -54,13 +54,7 @@ namespace RedNuc.Controllers
 
             var result = await _manejadorDeUsuario.CreateAsync(nuevoUsuario, modelo.Contrasena);
 
-            if (result.Succeeded)
-            {
-                return View();
-            }
-
-            return View();
-
+            return result.Succeeded ? new HttpStatusCodeResult(System.Net.HttpStatusCode.OK) : new HttpStatusCodeResult(System.Net.HttpStatusCode.InternalServerError, "ERROR_REGISTRO");
         }
 
         public ActionResult IniciarSesion()
@@ -87,6 +81,21 @@ namespace RedNuc.Controllers
 
             return View(modelo);
 
+        }
+
+        public async Task<ActionResult> EsCorreoNoExistente(string correoElectronico)
+        {
+            var respuesta = new { valid = false };
+
+            var usuario = await _manejadorDeUsuario.FindByEmailAsync(correoElectronico);
+
+            // Si no existe el usuario, entonces el correo es válido
+            if (usuario == null)
+            {
+                respuesta = new { valid = true };
+            }
+
+            return Json(respuesta, JsonRequestBehavior.AllowGet);
         }
 
         [Authorize]

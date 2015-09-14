@@ -14,7 +14,7 @@ namespace RedNuc.Models.ViewModels
         public string Contrasena { get; set; }
         public string Nombre { get; set; }
         public string Apellidos { get; set; }
-        public bool? EsAceptado { get; set; }
+        public string EsAceptado { get; set; }
 
     }
 }

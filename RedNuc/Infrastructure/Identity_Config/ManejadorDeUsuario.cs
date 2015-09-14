@@ -24,9 +24,9 @@ namespace RedNuc.Infrastructure.Identity_Config
             this.PasswordValidator = new PasswordValidator
             {
                 RequiredLength = 6,
-                RequireDigit = true,
-                RequireLowercase = true,
-                RequireUppercase = true,
+                RequireDigit = false,
+                RequireLowercase = false,
+                RequireUppercase = false,
             };
 
             // Configurar valores predeterminados para bloqueo de usuario
